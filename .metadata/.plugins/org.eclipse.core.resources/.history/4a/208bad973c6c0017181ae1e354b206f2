@@ -74,12 +74,12 @@ public class Login {
 		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {		// This is the action when you press the login button
+			public void actionPerformed(ActionEvent e) {
 				
 				String uname = username.getText();
 				String pad = passwordField.getText();
 				
-				if (uname.equals("name") && pad.equals("password")) // this will check if the correct username and password is entered to gain access to the account information
+				if (uname.equals("name") && pad.equals("password"))
 				{
 					JOptionPane.showMessageDialog(frame, "you are sucessfully logged in");
 					Menu menu = new Menu();
@@ -106,9 +106,9 @@ public class Login {
 		
 		JButton btnCreateAccount = new JButton("Create Account");
 		btnCreateAccount.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 						// this is the function that occurs when the user presses the create account button on the login page
+			public void actionPerformed(ActionEvent e) 
 			{
-				AccountCreation accountWindow = new AccountCreation();		// the create account window will open
+				AccountCreation accountWindow = new AccountCreation();
 				accountWindow.setVisible(true);
 			}
 		});
