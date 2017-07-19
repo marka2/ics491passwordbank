@@ -8,9 +8,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JList;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JTable;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -51,15 +54,12 @@ public class Menu extends JFrame {
 		menuInstructions.setBounds(23, 16, 421, 13);
 		contentPane.add(menuInstructions);
 		
-		table = new JTable();
-		table.setBounds(51, 56, 342, 130);
-		contentPane.add(table);
-		
 		JButton btnCreateNewEntry = new JButton("Create New Entry");
 		btnCreateNewEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 					// Place the actions to create a new entry here!
 			{
-				
+				NewEntry addEntryWindow = new NewEntry();
+				addEntryWindow.setVisible(true);
 			}
 		});
 		btnCreateNewEntry.setBounds(23, 215, 131, 29);
@@ -69,20 +69,11 @@ public class Menu extends JFrame {
 		btnDeleteEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 					// Place the actions to delete an entry here!
 			{
-				
+				DeleteEntry deleteEntryWindow = new DeleteEntry();
+				deleteEntryWindow.setVisible(true);
 			}
 		});
-		btnDeleteEntry.setBounds(152, 215, 131, 29);
+		btnDeleteEntry.setBounds(292, 215, 131, 29);
 		contentPane.add(btnDeleteEntry);
-		
-		JButton btnNewButton = new JButton("Edit Entry");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 					// Place the actions to edit an entry here!
-			{
-				
-			}
-		});
-		btnNewButton.setBounds(278, 215, 131, 29);
-		contentPane.add(btnNewButton);
 	}
 }

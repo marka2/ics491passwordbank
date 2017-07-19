@@ -4,15 +4,22 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 public class AccountCreation extends JFrame {
 
+	private JFrame frame;
 	private JPanel contentPane;
 	private JTextField uName;
 	private JTextField pWord;
@@ -108,6 +115,18 @@ public class AccountCreation extends JFrame {
 		sAnswer2.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Submit");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 			// enter actions when pressing submit button here!
+			{
+				frame = new JFrame();
+				frame.setBounds(100, 100, 450, 300);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frame.getContentPane().setLayout(null);
+				
+				JOptionPane.showMessageDialog(frame, "Account Successfully Created!");
+
+			}
+		});
 		btnNewButton.setBounds(160, 243, 117, 29);
 		contentPane.add(btnNewButton);
 	}
