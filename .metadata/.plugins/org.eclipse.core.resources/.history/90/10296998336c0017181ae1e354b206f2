@@ -1,0 +1,81 @@
+package ics491passBank;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextPane;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+public class Login {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Login window = new Login();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Login() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JTextPane txtpnWelcomeToThe = new JTextPane();
+		txtpnWelcomeToThe.setBounds(0, 0, 450, 16);
+		txtpnWelcomeToThe.setText("	       Welcome to the Website Password Bank");
+		frame.getContentPane().add(txtpnWelcomeToThe);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setBounds(49, 164, 61, 16);
+		frame.getContentPane().add(lblPassword);
+		
+		JLabel lblUsername = new JLabel("Username");
+		lblUsername.setBounds(49, 133, 87, 16);
+		frame.getContentPane().add(lblUsername);
+		
+		textField = new JTextField();
+		textField.setBounds(223, 127, 134, 28);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(223, 158, 134, 28);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		JButton btnLogin = new JButton("Login");
+		btnLogin.setBounds(152, 198, 117, 29);
+		frame.getContentPane().add(btnLogin);
+		
+		JLabel lblPleaseEnterIn = new JLabel("Please enter in your username and password below then click Login");
+		lblPleaseEnterIn.setBounds(10, 28, 434, 28);
+		frame.getContentPane().add(lblPleaseEnterIn);
+	}
+}
