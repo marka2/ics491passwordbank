@@ -49,7 +49,7 @@ public class AccountCreation extends JFrame {
 	 */
 	public AccountCreation() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -61,56 +61,56 @@ public class AccountCreation extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel newUsername = new JLabel("Username");
-		newUsername.setBounds(50, 75, 101, 16);
+		newUsername.setBounds(50, 75, 101, 24);
 		contentPane.add(newUsername);
 		
 		JLabel newPassword = new JLabel("Password");
-		newPassword.setBounds(50, 109, 61, 16);
+		newPassword.setBounds(50, 109, 61, 24);
 		contentPane.add(newPassword);
 		
 		JLabel Security1 = new JLabel("Security Question 1");
-		Security1.setBounds(50, 137, 137, 16);
+		Security1.setBounds(50, 137, 137, 24);
 		contentPane.add(Security1);
 		
 		JLabel Security2 = new JLabel("Security Question 2");
-		Security2.setBounds(50, 197, 137, 16);
+		Security2.setBounds(50, 197, 137, 24);
 		contentPane.add(Security2);
 		
 		JLabel SecurityAnswer1 = new JLabel("Security Question 1 Answer");
-		SecurityAnswer1.setBounds(50, 165, 180, 16);
+		SecurityAnswer1.setBounds(50, 165, 180, 24);
 		contentPane.add(SecurityAnswer1);
 		
 		JLabel SecurityAnswer2 = new JLabel("Security Question 2 Answer");
-		SecurityAnswer2.setBounds(50, 227, 180, 16);
+		SecurityAnswer2.setBounds(50, 227, 180, 24);
 		contentPane.add(SecurityAnswer2);
 		
 		uName = new JTextField();
-		uName.setBounds(276, 75, 134, 16);
+		uName.setBounds(276, 75, 134, 32);
 		contentPane.add(uName);
 		uName.setColumns(10);
 		
 		pWord = new JTextField();
-		pWord.setBounds(276, 109, 134, 16);
+		pWord.setBounds(276, 109, 134, 32);
 		contentPane.add(pWord);
 		pWord.setColumns(10);
 		
 		sQuestion1 = new JTextField();
-		sQuestion1.setBounds(276, 137, 134, 16);
+		sQuestion1.setBounds(276, 137, 134, 32);
 		contentPane.add(sQuestion1);
 		sQuestion1.setColumns(10);
 		
 		sAnswer1 = new JTextField();
-		sAnswer1.setBounds(276, 165, 134, 16);
+		sAnswer1.setBounds(276, 165, 134, 32);
 		contentPane.add(sAnswer1);
 		sAnswer1.setColumns(10);
 		
 		sQuestion2 = new JTextField();
-		sQuestion2.setBounds(276, 197, 134, 16);
+		sQuestion2.setBounds(276, 197, 134, 32);
 		contentPane.add(sQuestion2);
 		sQuestion2.setColumns(10);
 		
 		sAnswer2 = new JTextField();
-		sAnswer2.setBounds(276, 227, 134, 16);
+		sAnswer2.setBounds(276, 227, 134, 32);
 		contentPane.add(sAnswer2);
 		sAnswer2.setColumns(10);
 		
@@ -127,7 +127,7 @@ public class AccountCreation extends JFrame {
 
 			}
 		});
-		btnNewButton.setBounds(160, 243, 117, 29);
+		btnNewButton.setBounds(160, 285, 117, 29);
 		contentPane.add(btnNewButton);
 	}
 
