@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Menu extends JFrame {
-
+	
 	private JPanel contentPane;
 	private JTable table;
 
@@ -41,7 +41,7 @@ public class Menu extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Menu() {
+	public Menu() {		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -76,4 +76,5 @@ public class Menu extends JFrame {
 		btnDeleteEntry.setBounds(292, 215, 131, 29);
 		contentPane.add(btnDeleteEntry);
 	}
+	
 }

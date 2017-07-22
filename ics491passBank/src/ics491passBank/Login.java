@@ -13,11 +13,18 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 
 public class Login {
-
+	Connection con;
+	Statement st;
+	ResultSet rs;
+	
 	private JFrame frame;
 	private JTextField username;
 	private JPasswordField passwordField;
@@ -42,13 +49,31 @@ public class Login {
 	 * Create the application.
 	 */
 	public Login() {
+		connect();
 		initialize();
+	}
+	
+	public void connect() {
+		try {
+			// Database URL where sun is the driver name.
+			String driver = "sun.jdbc.odbc.JdbcOdbcDriver";
+			Class.forName(driver);
+			
+			//Connection String, where db1 is the database name.
+			String db = "jdbc:odbc:db1";
+			con = DriverManager.getConnection(db);
+			st = con.createStatement();
+		} catch (Exception ex) {
+			System.out.println(
+					"Failed to make connection to the database. "
+					+ "Error: " + ex.getMessage());
+		}
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() {		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
