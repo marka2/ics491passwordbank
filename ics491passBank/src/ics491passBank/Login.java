@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
@@ -49,24 +50,28 @@ public class Login {
 	 * Create the application.
 	 */
 	public Login() {
-		connect();
-		initialize();
+            	initialize();
+//		connect();
+
 	}
 	
-	public void connect() {
+	public boolean connect(String uname, String pass) {
 		try {
 			// Database URL where sun is the driver name.
-			String driver = "sun.jdbc.odbc.JdbcOdbcDriver";
-			Class.forName(driver);
+			String driver = "org.apache.derby.jdbc.ClientDriver";
+			Class.forName(driver).newInstance();
 			
 			//Connection String, where db1 is the database name.
-			String db = "jdbc:odbc:db1";
-			con = DriverManager.getConnection(db);
+			String db = "jdbc:derby://localhost:1527/user";
+                        
+			con = DriverManager.getConnection(db, uname, pass);
 			st = con.createStatement();
+                        return true;
 		} catch (Exception ex) {
 			System.out.println(
 					"Failed to make connection to the database. "
 					+ "Error: " + ex.getMessage());
+                        return false;
 		}
 	}
 
@@ -103,9 +108,11 @@ public class Login {
 				
 				String uname = username.getText();
 				String pad = passwordField.getText();
-				
-				if (uname.equals("name") && pad.equals("password")) // this will check if the correct username and password is entered to gain access to the account information
-				{
+				connect(uname, pad);
+//				if (uname.equals("name") && pad.equals("password")) // this will check if the correct username and password is entered to gain access to the account information
+//				{
+                                if (connect(uname, pad))
+                                {
 					JOptionPane.showMessageDialog(frame, "you are sucessfully logged in");
 					Menu menu = new Menu();
 					menu.setVisible(true);
