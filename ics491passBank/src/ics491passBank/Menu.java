@@ -60,6 +60,7 @@ public class Menu extends JFrame {
 			{
 				NewEntry addEntryWindow = new NewEntry();
 				addEntryWindow.setVisible(true);
+				dispose(); //Remove Menu frame
 			}
 		});
 		btnCreateNewEntry.setBounds(23, 215, 131, 29);
@@ -71,6 +72,7 @@ public class Menu extends JFrame {
 			{
 				DeleteEntry deleteEntryWindow = new DeleteEntry();
 				deleteEntryWindow.setVisible(true);
+				dispose(); //Remove Menu frame
 			}
 		});
 		btnDeleteEntry.setBounds(292, 215, 131, 29);

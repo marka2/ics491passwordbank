@@ -97,8 +97,20 @@ public class NewEntry extends JFrame {
 				JOptionPane.showMessageDialog(frame, "New Entry Successfully Added!");
 			}
 		});
-		btnSubmit.setBounds(150, 210, 117, 29);
+		btnSubmit.setBounds(230, 210, 117, 29);
 		contentPane.add(btnSubmit);
+		
+		JButton backButton = new JButton("Back");
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{
+				Menu menuWindow = new Menu();
+				menuWindow.setVisible(true);
+				dispose(); //Remove NewEntry frame
+			}
+		});
+		backButton.setBounds(100, 210, 117, 29);
+		contentPane.add(backButton);
 		
 	}
 }

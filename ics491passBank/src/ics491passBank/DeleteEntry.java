@@ -65,8 +65,20 @@ public class DeleteEntry extends JFrame {
 				JOptionPane.showMessageDialog(frame, "Entry Successfully Deleted!");
 			}
 		});
-		btnSubmit.setBounds(159, 210, 117, 29);
+		btnSubmit.setBounds(230, 210, 117, 29);
 		contentPane.add(btnSubmit);
+		
+		JButton backButton = new JButton("Back");
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{
+				Menu menuWindow = new Menu();
+				menuWindow.setVisible(true);
+				dispose(); //Remove DeleteEntry frame
+			}
+		});
+		backButton.setBounds(100, 210, 117, 29);
+		contentPane.add(backButton);
 	}
 
 }

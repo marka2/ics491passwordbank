@@ -21,12 +21,12 @@ import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
 
-public class Login {
+public class Login extends JFrame{
 	Connection con;
 	Statement st;
 	ResultSet rs;
 	
-	private JFrame frame;
+	JFrame frame;
 	private JTextField username;
 	private JPasswordField passwordField;
 
@@ -51,7 +51,7 @@ public class Login {
 	 */
 	public Login() {
             	initialize();
-//		connect();
+// connect();
 
 	}
 	
@@ -74,6 +74,9 @@ public class Login {
                         return false;
 		}
 	}
+	
+	
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -116,6 +119,7 @@ public class Login {
 					JOptionPane.showMessageDialog(frame, "you are sucessfully logged in");
 					Menu menu = new Menu();
 					menu.setVisible(true);
+					dispose();
 
 				}
 				else

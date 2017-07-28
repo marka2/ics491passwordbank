@@ -15,6 +15,11 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 
 public class AccountCreation extends JFrame {
@@ -43,7 +48,7 @@ public class AccountCreation extends JFrame {
 			}
 		});
 	}
-
+	
 	/**
 	 * Create the frame.
 	 */
@@ -113,9 +118,9 @@ public class AccountCreation extends JFrame {
 		sAnswer2.setBounds(276, 227, 134, 32);
 		contentPane.add(sAnswer2);
 		sAnswer2.setColumns(10);
-		
-		JButton btnNewButton = new JButton("Submit");
-		btnNewButton.addActionListener(new ActionListener() {
+				
+		JButton submitButton = new JButton("Submit");
+		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 			// enter actions when pressing submit button here!
 			{
 				frame = new JFrame();
@@ -123,12 +128,36 @@ public class AccountCreation extends JFrame {
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.getContentPane().setLayout(null);
 				
+				//Insert new user
+		        try {
+					Class.forName("org.apache.derby.jdbc.ClientDriver");
+		        Connection con = (Connection) DriverManager.getConnection("jdbc:derby://localhost:1527/user");
+		        Statement stat = con.createStatement();
+		        stat.executeQuery("INSERT INTO users (userName, password, SQ1, "
+				      + "answer1, SQ2, answer2) VALUES('"+uName+"','"+pWord+"','"+sQuestion1+"','"+sAnswer1+"','"+sQuestion2+"','"+sAnswer2+"')");
+		        
 				JOptionPane.showMessageDialog(frame, "Account Successfully Created!");
-
+		        } catch (Exception ex) {
+		        	System.out.println("Failed to make connection to the database. " 
+		        			           + "Error: " +ex.getMessage());
+		        }
 			}
 		});
-		btnNewButton.setBounds(160, 285, 117, 29);
-		contentPane.add(btnNewButton);
+		submitButton.setBounds(230, 285, 117, 29);
+		contentPane.add(submitButton);
+		
+		JButton backButton = new JButton("Back");
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{
+				Login loginWindow = new Login();
+				loginWindow.frame.setVisible(true);
+				dispose(); //Remove AccountCreation frame
+			}
+		});
+		backButton.setBounds(100, 285, 117, 29);
+		contentPane.add(backButton);
+		
 	}
-
+	
 }
