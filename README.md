@@ -9,8 +9,9 @@ They will be able to specify websites in which they have accounts on and store t
 Users can login or create a new account which will add to our first SQL table with data like a password, security questions, and answers. Next the user is greated by a menu where they can create a new storage for a specific website, or they can delete an existing one on their account.
 
 ## Front-End: Done <br />
-Week 1: Java applet using swing classes to create the user-interface. (Mark)
-Week 2: We have added back buttons and other UI fixes. I terms of what we still have to do, the front-end of the applet is complete and only aesthetic changes will be made from this point forward. (Mark & Blake)
+*Week 1:* Java applet using swing classes to create the user-interface. (Mark) <br />
+
+*Week 2:* We have added back buttons and other UI fixes. I terms of what we still have to do, the front-end of the applet is complete and only aesthetic changes will be made from this point forward. (Mark & Blake) <br />
 
 ## Back-End: Currently in the works!<br />
 *Week 1:* Java SQL classes to connect to our database and create/delete information, security checks (security questions, passwords), creating databases and tables, linking the front-end to the back-end by ways of verifying identity, and adding or removing website data saved on a user's account. (Blake, Jesus, & Hendricks) <br />
