@@ -1,6 +1,14 @@
 # Password-Website Bank
 ##### Created by: Mark Arakaki, Jesus Gonzalez, Blake Larson, & Hendricks Hicks
 
+## Setup: <br />
+1. Copy or clone repo files to your localhost <br />
+2. Open an IDE, preferrably NetBeans (Please note that Apache Tomcat 8.0 or newer will need to be setup)<br />
+3. Open project (ics491-passBank) <br />
+4. You will need to add libraries to the project, so extend the project and right-click the library tab and add libraries. <br />
+5. Add: Java EE Web 7 API Library, JSF 2.2, Java DB Driver <br />
+6. Run the program and enjoy! <br />
+
 ## Description: <br />
 This is the website password bank application for ICS 491 at the University of Hawaii at Manoa. Using Java, we are developing an all in one user-friendly password storage, where people can login with dual authentication (password and security questions). <br />
 
@@ -26,14 +34,16 @@ With the current state and functionality of our code, we may decide to refactor 
 
 ## What was done this week: <br />
 
-This week we linked our database to our login page. We also made some UI enhancements such as back buttons so that the user can go back to the previous frame. 
+Refactored the code to better suit the needs of a database. Currently have a working login page that runs off of one user, and if the incorrect username or password is used then the user will fail to access further. Once logged in properly, the contents of the table are displayed for the user (ie. website, username, password). If the user would like to add data to their existing database, then they can hit the add button and input information. There are currently security checks in place for the three data pieces, so the user cannot enter any less.
+
 ## What is pending: <br />
 
-We still need to link our database to the rest of the applet. We must also still add security measures to our applet, but cannot do so until our database is connected properly. 
+Need to add multiple users for the login rather then one standalone user. We want to add a delete and modify button for each row of data, but need to setup a unique identifier for each.
+
 ## Who did what this week: <br />
 
-Mark & Blake - Front-end - UI fixes 
-Blake & Jesus - Back-end - Connecting the the database to all applet screens
+Jesus and Blake - Frontend format, color, button, layout
+Jesus and Blake - Backend database setup, data display, login page with validation
 
 ## Link to GitHub Repository:
 https://github.com/marka2/ics491passwordbank
