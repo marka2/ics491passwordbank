@@ -16,13 +16,20 @@ They will be able to specify websites in which they have accounts on and store t
 
 Users can login or create a new account which will add to our first SQL table with data like a password, security questions, and answers. Next the user is greated by a menu where they can create a new storage for a specific website, or they can delete an existing one on their account. <br />
 
+## Disclaimers/ Caveats: <br />
+Currently the program only works for a single user experience. Our goal was to setup the application on a server so multiple people could access their own account and add their own data to tables. Since our original code was a struggle to work around in adding a database setup, we decided to revitalize the entire program. We changed the front-end using html and css rather than Java-Swing. The back-end now allows for a database use and the creation of data touples to insert in the table. We also created a login page that is secure to the single user who is running the application on localhost database, instead of a creation tool for new users. <br />
+
+The username and password is specific to the created database that is connected to the application. The user will need to use these credentials to login. <br />
+
 ## What was done this week: <br />
 
 Refactored the code to better suit the needs of a database. Currently have a working login page that runs off of one user, and if the incorrect username or password is used then the user will fail to access further. Once logged in properly, the contents of the table are displayed for the user (ie. website, username, password). If the user would like to add data to their existing database, then they can hit the add button and input information. There are currently security checks in place for the three data pieces, so the user cannot enter any less. <br />
 
 ## What is pending: <br />
 
-Need to add multiple users for the login rather then one standalone user. We want to add a delete and modify button for each row of data, but need to setup a unique identifier for each. <br />
+1. Need to add multiple users for the login rather then one standalone user. <br />
+2. We want to add a delete and modify button for each row of data, but need to setup a unique identifier for each. <br />
+3. Security questions will need to be implemented to increase security on the user logging in. <br />
 
 ## Who did what this week: <br />
 
