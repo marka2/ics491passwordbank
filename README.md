@@ -38,9 +38,10 @@ Refactored the code to better suit the needs of a database. Currently have a wor
 
 Jesus and Blake - Frontend format, color, button, layout <br />
 Jesus and Blake - Backend database setup, data display, login page with validation <br />
+Mark, Jesus, & Blake - Applet documentation & Report
 
 ## Link to GitHub Repository:
 https://github.com/marka2/ics491passwordbank
 
 ## Link to Github Wiki Page:
-https://github.com/marka2/ics491passwordbank/blob/master/README.md
+https://github.com/marka2/ics491passwordbank/wiki/Website-Password-Bank-Applet
