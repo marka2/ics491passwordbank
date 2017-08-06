@@ -2,7 +2,7 @@
 ##### Created by: Mark Arakaki, Jesus Gonzalez, Blake Larson, & Hendricks Hicks
 
 ## Setup: <br />
-1. Copy or clone repo files to your localhost <br />
+1. Copy or clone repo files to your localhost (Main concern is the new application **passbankv5** folder)<br />
 2. Open an IDE, preferrably NetBeans (Please note that Apache Tomcat 8.0 or newer will need to be setup)<br />
 3. Open project (ics491-passBank) <br />
 4. You will need to add libraries to the project, so extend the project and right-click the library tab and add libraries. <br />
