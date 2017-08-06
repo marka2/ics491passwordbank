@@ -1,4 +1,4 @@
-# Password-Website Bank
+# Website Password Bank
 ##### Created by: Mark Arakaki, Jesus Gonzalez, Blake Larson, & Hendricks Hicks
 
 ## Setup: <br />
