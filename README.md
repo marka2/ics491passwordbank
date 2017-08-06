@@ -7,7 +7,8 @@
 3. Open project (ics491-passBank) <br />
 4. You will need to add libraries to the project, so extend the project and right-click the library tab and add libraries. <br />
 5. Add: Java EE Web 7 API Library, JSF 2.2, Java DB Driver <br />
-6. Run the program and enjoy! <br />
+6. Create the database and add the name to the getConnection() function of the code <br />
+7. Run the program and enjoy! <br />
 
 ## Description: <br />
 This is the website password bank application for ICS 491 at the University of Hawaii at Manoa. Using Java, we are developing an all in one user-friendly password storage, where people can login with dual authentication (password and security questions). <br />
