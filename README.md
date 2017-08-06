@@ -7,7 +7,8 @@
 3. Open project (ics491-passBank) <br />
 4. You will need to add libraries to the project, so extend the project and right-click the library tab and add libraries. <br />
 5. Add: Java EE Web 7 API Library, JSF 2.2, Java DB Driver <br />
-6. Create the database and add the name to the getConnection() function of the code <br />
+6. Create the database and table (w/ website, username, and password columns) <br />
+7. Add the name of the database and table to the getConnection() function of the code <br />
 7. Run the program and enjoy! <br />
 
 ## Description: <br />
