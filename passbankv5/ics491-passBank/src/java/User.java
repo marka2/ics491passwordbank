@@ -70,7 +70,7 @@ public class User{
         
     }
     // Used to establish connection during login
-    public Connection getLoginConnection(){
+    private Connection getLoginConnection(){
         try{
             Class.forName("org.apache.derby.jdbc.ClientDriver");  
             String db = "the_bank";
@@ -91,12 +91,12 @@ public class User{
     }
     
     // Used to establish connection during data display
-    public Connection getConnection(){
+    private Connection getConnection(){
         try{
             Class.forName("org.apache.derby.jdbc.ClientDriver");  
             String db = "the_bank";
             connection = DriverManager.getConnection("jdbc:derby://localhost:1527/"+db,"test", "test");
-            table = "passes";
+            table = "passBank";
             return connection;
         }catch(Exception e){
             System.out.println(e);
@@ -142,35 +142,16 @@ public class User{
             return "user_display.xhtml?faces-redirect=true";
         else return "create.xhtml?faces-redirect=true";
     }
-    // Used to fetch record to update
-    public String edit(int id){
-        User user = null;
-        System.out.println(id);
-        try{
-            connection = getConnection();
-            Statement stmt=getConnection().createStatement();  
-            ResultSet rs=stmt.executeQuery("select * from " + table + " where userid = "+(userid));
-            rs.next();
-            user = new User();
-            user.setWebsite(rs.getString("website"));
-            user.setUsername(rs.getString("username"));
-            user.setPassword(rs.getString("password"));
-            sessionMap.put("editUser", user);
-            connection.close();
-        }catch(Exception e){
-            System.out.println(e);
-        }       
-        return "/edit.xhtml?faces-redirect=true";
-    }
-    // Used to update user record
-//    public String update(User u){
+    
+//    // Used to update user record
+//    public String update(String web, String uname, String pw){
 //        //int result = 0;
 //        try{
 //            connection = getConnection();  
 //            PreparedStatement stmt=connection.prepareStatement("update "+ table + " set website=?, username=?, password=?");  
-//            stmt.setString(1, website);
-//            stmt.setString(2, username);
-//            stmt.setString(3, password); 
+//            stmt.setString(1, web);
+//            stmt.setString(2, uname);
+//            stmt.setString(3, pw); 
 //            stmt.executeUpdate();
 //            connection.close();
 //        }catch(Exception e){
@@ -178,14 +159,21 @@ public class User{
 //        }
 //        return "/user_display.xhtml?faces-redirect=true";      
 //    }
+    
     // Used to delete user record
-//    public void delete(int id){
-//        try{
-//            connection = getConnection();  
-//            PreparedStatement stmt = connection.prepareStatement("delete from "+table+" where userid = "+userid);  
-//            stmt.executeUpdate();  
-//        }catch(Exception e){
-//            System.out.println(e);
-//        }
-//    }
+    public String delete(String web, String uname, String pw){
+        try{
+            connection = getConnection();  
+            PreparedStatement stmt = connection.prepareStatement("delete from "+table+" where website=? AND username=? AND password=?");
+            stmt.setString(1, web);
+            stmt.setString(2, uname);
+            stmt.setString(3, pw); 
+            stmt.executeUpdate();  
+            connection.close();
+            return "user_display.xhtml?faces-redirect=true";
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return "/user_display.xhtml?faces-redirect=true";
+    }
 }

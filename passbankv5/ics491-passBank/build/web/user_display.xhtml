@@ -42,15 +42,15 @@
                     <h:outputText value="#{u.password}"/>
                 </h:column>
 <!--                <h:column> 
-                    <f:facet name="header">Update</f:facet>
-                    <h:commandButton action = "#{user.edit(u.id)}" value="Update" class="btn btn-primary"> 
+                        <f:facet name="header">Update</f:facet>
+                        <h:commandButton action = "#{user.edit_display(u.website, u.username, u.password)}" value="Edit" class="btn btn-primary"> 
+                        </h:commandButton>
+                 </h:column>-->
+                 <h:column> 
+                    <f:facet name="header">Delete</f:facet>
+                    <h:commandButton action = "#{user.delete(u.website, u.username, u.password)}" value="Delete" class="btn btn-danger"> 
                     </h:commandButton>
                 </h:column>
-                <h:column> 
-                    <f:facet name="header">Delete</f:facet>
-                    <h:commandButton action = "#{user.delete(u.id)}" value="Delete" class="btn btn-danger"> 
-                    </h:commandButton>
-                </h:column>-->
             </h:dataTable>
             <center><h:commandButton action = "create.xhtml?faces-redirect=true" value="Create New Entry" class="btn btn-success"></h:commandButton> </center>
         </h:form>
