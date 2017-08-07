@@ -28,10 +28,12 @@ The username and password is specific to the created database that is connected 
 
 Refactored the code to better suit the needs of a database. Currently have a working login page that runs off of one user, and if the incorrect username or password is used then the user will fail to access further. Once logged in properly, the contents of the table are displayed for the user (ie. website, username, password). If the user would like to add data to their existing database, then they can hit the add button and input information. There are currently security checks in place for the three data pieces, so the user cannot enter any less. <br />
 
+The deletion button was created and allows users to remove any data tuple they like from their databank. <br />
+
 ## What is pending: <br />
 
 1. Need to add multiple users for the login rather then one standalone user. <br />
-2. We want to add a delete and modify button for each row of data, but need to setup a unique identifier for each. <br />
+2. We want to add a modify button for each row of data, but need to setup a unique identifier for each. <br />
 3. Security questions will need to be implemented to increase security on the user logging in. <br />
 
 ## Who did what this week: <br />
